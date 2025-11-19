@@ -8,11 +8,17 @@ def main_menu():
         df = pd.read_csv("pandas-analysis/cleaned_sales_data.csv")
         print(df.describe())
 
+    def show_average_transaction_amount():
+        df = pd.read_csv("pandas-analysis/cleaned_sales_data.csv")
+        average_amount = df["Amount"].mean()
+        print(f"Average Transaction Amount: {average_amount}")
+
     while True:
         print("\n--- Main Menu ---")
         print("1. Greet User")
         print("2. Show Data Summary")
-        print("3. Exit")
+        print("3. Show Average Transaction Amount")
+        print("4. Exit")
 
         choice = input("Enter your choice (1-3)")
 
@@ -21,6 +27,8 @@ def main_menu():
         elif choice == "2":
             show_data_summary()
         elif choice == "3":
+            show_average_transaction_amount()
+        elif choice == "4":
             print("Goodbye.")
             break
         else:
